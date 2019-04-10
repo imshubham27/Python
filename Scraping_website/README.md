@@ -4,7 +4,7 @@ IMDb is an online database of information related to films, television programs,
 [IMDB](https://www.imdb.com/movies-coming-soon/?ref_=inth_cs)
 
 ## About this project 
-Find the latest new movies coming soon to theaters,release dates, cast, directors all here on a csv file.
+Find the latest new movies coming soon to theaters,release dates, cast, directors all here on a 'Output.csv' file.
 
 ## Importing libraries
 
