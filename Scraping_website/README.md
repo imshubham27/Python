@@ -8,7 +8,7 @@ Find the latest new movies coming soon to theaters,release dates, cast, director
 
 ## Importing libraries
 
-import requests
-from datetime import datetime as dt
-from bs4 import BeautifulSoup
-import pandas as pd
+import requests\
+from datetime import datetime as dt\
+from bs4 import BeautifulSoup\
+import pandas as pd\
