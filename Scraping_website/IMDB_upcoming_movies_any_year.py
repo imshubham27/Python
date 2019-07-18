@@ -2,18 +2,28 @@ import requests
 from datetime import datetime as dt
 from bs4 import BeautifulSoup
 import pandas as pd
-base_url = requests.get('https://www.imdb.com/movies-coming-soon/?ref_=inth_cs').text
+base_url = requests.get('https://www.imdb.com/movies-coming-soon/?ref_=inth_cs')
+c=base_url.content
+print(c)
 
-soup = BeautifulSoup(base_url,'html.parser')
+soup = BeautifulSoup(base_url.text,'html.parser')
 
 all1=soup.find_all("div",{"class":"list_item odd"})
+print(all1)
+print(len(all1))
 all2=soup.find_all("div",{"class":"list_item even"})
+print(all2)
+print(len(all2))
 
 
 l=[]
 
 for item in all1:
     d={}
+    try:
+        d["Release Date"]=(item.find("h4",{"class":"li_group"}).find("a").text)
+    except:
+        d["Release Date"]="Not mentioned"
     try:
         d["Title"]=(item.find("h4").find("a").text)
     except:
@@ -45,6 +55,10 @@ for i in range(dt.now().month+1,13,1):
     all2=soup.find_all("div",{"class":"list_item even"})
     for item in all1:
         d={}
+        try:
+            d["Release Date"]=(item.find("h4",{"class":"li_group"}).find("a").text)
+        except:
+            d["Release Date"]="Not mentioned"
         try:
             d["Title"]=(item.find("h4").find("a").text)
         except:
