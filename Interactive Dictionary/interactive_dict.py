@@ -5,10 +5,16 @@ data=json.load(open("data.json"))
 
 def definition(w):
     w=w.lower()
+    title=w.title()
+    W=w.upper()
     if w in data:
         return data[w]
+    elif title in data:
+        return data[title]
+    elif W in data:
+        return data[W]
     elif len(get_close_matches(w,data.keys(),cutoff=0.75))>0 :
-        ans=input( "did you mean {} . type 'Y' if you mean it or type 'N' for no : ".format(get_close_matches(w,data.keys(),cutoff=0.75)[0].upper()))
+        ans=input( "Did you mean {} . type 'Y' if you mean it or type 'N' for no : ".format(get_close_matches(w,data.keys(),cutoff=0.75)[0].upper()))
         if ans.lower()=='y':
             return definition(get_close_matches(w,data.keys(),cutoff=0.75)[0])
         else:
@@ -19,4 +25,12 @@ def definition(w):
 
 word = input("Enter the word: ")
 
-print(definition(word))
+output=definition(word)
+
+if type(output)==list:
+    for i in output:
+        print(i)
+else:
+    print(output)
+
+
