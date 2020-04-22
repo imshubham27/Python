@@ -274,38 +274,78 @@
 
 # print(s)
 
-from itertools import permutations
-strs=["eat", "tea", "tan", "ate", "nat", "bat"]
-b=[]
-c=[]
+# from itertools import permutations
+# strs=["compilations","bewailed","horology","lactated","blindsided","swoop","foretasted"]
+# b=[]
+# c=[]
+# y=len(strs)
+# i=0
+# while(i<y):
+#     d=[]
+#     sel=list(permutations(strs[i],len(strs[i])))
+#     for j in range(len(sel)):
+#         a=""
+#         a="".join(sel[j])
+#         # print("AAA",a)
+#         b.append(a)
+#     # print("BBB",b)
+#     d.append(strs[i])
+#     strs.remove(strs[i])
+#     y=y-1
+#     x=0
+#     # print("STRS!",strs)
+#     while(x<y):
+#         # print("XXX",x)
+#         # print("YYYY",y)
+#         # print("STRS@",strs[x])
+#         if strs[x] in b:
+#             d.append(strs[x])
+#             strs.remove(strs[x])
+#             x=x-1
+#             y=y-1
+#             # print("XAFTER",x)
+#             # print("D",d)
+#             # print("STRS AFTER",strs)
+#         x=x+1
+#     c.append(d)
+#     b=[]
+#     print("CCC",c)
+# for i in c:
+#     print(i)
 
-# i=strs[0]
-# sel=(list(permutations(i,len(i)))
-# print ("".join(sel[0]))
-for i in range(len(strs)):
-    d=[]
-    sel=list(permutations(strs[i],len(strs[i])))
-    for j in range(len(sel)):
-        a=""
-        a="".join(sel[j])
-        # print("AAA",a)
-        b.append(a)
-    print("BBB",b)
-    d.append(strs[i])
-    x=i+1
-    for x in range(len(strs)):
-        if strs[i+1] in b:
-            d.append(strs[i+1])
-            strs.remove(strs[i+1])
-    c.append(d)
-    b=[]
-    print("CCC",c)
-    
-
-
-
-
-
-
-
-
+class Solution:
+    def backspaceCompare(self, S: str, T: str) -> bool:
+        S=list(S)
+        i=0
+        y=len(S)
+        while i<y:
+            if S[i]=="#" and i!=0:
+                S.remove(S[i])
+                S.remove(S[i-1])
+                i=i-2
+                y=y-2
+            elif S[i]=="#" and i==0:
+                S.remove(S[i])
+                i=i-1
+                y=y-1
+            i=i+1
+        S=''.join(S)
+        T=list(T)
+        i=0
+        y=len(T)
+        while i<y:
+            if T[i]=="#" and i!=0:
+                T.remove(T[i])
+                T.remove(T[i-1])
+                i=i-2
+                y=y-2
+            elif T[i]=="#" and i==0:
+                T.remove(T[i])
+                i=i-1
+                y=y-1
+            i=i+1
+        T=''.join(T)
+        if T==S:
+            return True
+        else:
+            return False
