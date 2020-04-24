@@ -313,39 +313,150 @@
 # for i in c:
 #     print(i)
 
-class Solution:
-    def backspaceCompare(self, S: str, T: str) -> bool:
-        S=list(S)
-        i=0
-        y=len(S)
-        while i<y:
-            if S[i]=="#" and i!=0:
-                S.remove(S[i])
-                S.remove(S[i-1])
-                i=i-2
-                y=y-2
-            elif S[i]=="#" and i==0:
-                S.remove(S[i])
-                i=i-1
-                y=y-1
-            i=i+1
-        S=''.join(S)
-        T=list(T)
-        i=0
-        y=len(T)
-        while i<y:
-            if T[i]=="#" and i!=0:
-                T.remove(T[i])
-                T.remove(T[i-1])
-                i=i-2
-                y=y-2
-            elif T[i]=="#" and i==0:
-                T.remove(T[i])
-                i=i-1
-                y=y-1
-            i=i+1
-        T=''.join(T)
-        if T==S:
-            return True
+# S="oi###mupo##rszty#s#xu###bxx##dqc#gdjz"
+# T="oi###mu#ueo##pk#o##rsztu#y#s#xu###bxx##dqc#gz#djz"
+# S=list(S)
+# i=0
+# y=len(S)
+# while i<y:
+#     if S[i]=="#" and i!=0:
+#         S.remove(S[i])
+#         S.remove(S[i-1])
+#         i=i-2
+#         y=y-2
+#     elif S[i]=="#" and i==0:
+#         S.remove(S[i])
+#         i=i-1
+#         y=y-1
+#     i=i+1
+# S=''.join(S)
+# T=list(T)
+# i=0
+# y=len(T)
+# while i<y:
+#     if T[i]=="#" and i!=0:
+#         T.remove(T[i])
+#         T.remove(T[i-1])
+#         i=i-2
+#         y=y-2
+#     elif T[i]=="#" and i==0:
+#         T.remove(T[i])
+#         i=i-1
+#         y=y-1
+#     i=i+1
+# T=''.join(T)
+# print(S)
+# print(T)
+# if T==S:
+#     print (True)
+# else:
+#     print (False)
+
+# from functools import reduce 
+# nums=[1,2,3,4]
+# c=[]
+# for i in range(len(nums)):
+#     # print("II",i)
+#     d=nums.copy()
+#     z=d.remove(d[i])
+#     # print("ZZ",z)
+#     # print("DD",d)
+#     a=reduce((lambda x, y: x * y), d) 
+#     # print("AA",a)
+#     c.append(a)
+#     # print(c)
+# return c
+s="(*))"
+a=s.count('(')
+b=s.count(')')
+c=s.count('*')
+s=list(s)
+i=0
+# print(s)
+y=len(s)
+while (i<y):
+    print(i)
+    if s[i]=="*" and s[i-1]=="(" and s[i+1]==")":
+        s[i]=""
+        s[i-1]=""
+        s[i+1]="" 
+        i=i-2
+        y=y-3
+    i=i+1
+    print(s)
+print(s)
+
+if (a+c==b) or (b+c==a):
+    print(True)
+
+for i in s:
+    print(next(i))
+
+
+T = [55,38,53,81,61,93,97,32,43,78]
+
+d=[]
+for i in range(len(T)-1):
+    for j in range(i+1,len(T)-1):
+        print("TJ",T[j])
+        print("TI",T[i])
+        if T[j]>T[i]:
+            a=j-i
+            print("AA",a)
+            break
         else:
-            return False
+            a=0
+    d.append(a)
+    print("ABEFORE",a)
+d.append(0)        
+print(d)
+
+T = [89,62,70,58,47,47,46,76,100,70]
+Expected:[8,1,5,4,3,2,1,1,0,0]
+def temp(a):
+    # b=T.index(a)
+    T.remove(a)
+    # print("B",b)
+    # i=b+1
+    # print("II",i)
+    for i in range(len(T)):
+        if(T[i]>a):
+            # print("CC",c)
+            print("II",i)
+            c=i+1
+            break
+        else:
+            c=0
+    print("C",c)
+    return c
+
+result = list(map(temp, T[:len(T)-1]) )
+result.append(0)
+print(result)
+
+
+
+a=19
+d=[]
+def get_digit(num):
+    if num < 10:
+        d.append(num)
+    else:
+        get_digit(num // 10)
+        d.append(num % 10)
+while a!=1:
+    get_digit(a)    
+    a=(sum(i*i for i in d))
+    print(a)
+    if(a==1):
+        flag=0
+        break
+    d=[]
+if(flag==0):
+    return(True)
+else:
+    return(False)
+
+        
+
+
