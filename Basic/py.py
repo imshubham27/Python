@@ -457,6 +457,29 @@ if(flag==0):
 else:
     return(False)
 
+t=[1,2,1,2,1,3,2]
+s=0
+a=set(t)
+print(t)
+d=[]
+for i in a:
+    d.append(t.count(i))
+print(d)
+for i in d:
+    s=s+ i//2
+print(s)
+
+    a=len(s)
+    b=(n//a)+1
+    print(b)
+    s=s*b
+    s=s[:n]
+    c=s.count("a")
+    return c
+
+
+
+
         
 
 
