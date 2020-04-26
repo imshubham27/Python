@@ -478,8 +478,81 @@ print(s)
     return c
 
 
+c="0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 1 0 0 1 0 1 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0 1 0 1 0 1 0 1 0 0 0 0 0 0 1 0 0 0"
+c=list(c)
+for i in range(100):
+    c.remove(' ')
+print(c)
+s=0
+i=0
+k=(len(c))
+while i<k-2:
+    print("I BEFORE",i)
+    if (c[i+1]+c[i+2]==0) or c[i+1]==1:
+        s=s+1
+        i=i+2
+        print("I",i)
+    elif c[i+1]==0:
+        s=s+1
+        i=i+1
+    else:
+        i=i+1
+        pass
+if(c[k-2]==1):
+    print s
+else:
+    print (s+1)
+
+a=[1,2321,3,412]
+d=1       
+l1=a[d:]
+l2=a[:d]
+l1.extend(l2)
+c=str()
+for i in l1:
+    c=c+ str(i)+" "
+print(c)
 
 
-        
+s=2131.121321
+print(int(s))
+
+n=98280 
+k=84
+def eva(x):
+    
+    if (x+k) in range(1,n+1) and (x+k) not in d:
+        return (x+k)
+    elif (x-k) in range(1,n+1) and (x-k) not in d: 
+        return (x-k)
+    else :
+        return -1
+
+d=list(map(eva,list(range(1,n+1))))
+v=d.count(-1)
+z=' '.join(str(x) for x in d)
+if(v>0):
+    print(-1)
+    # return(str(-1))        
+else:
+    print(z)
+    # return z
+
+from functools import reduce
+li="AAABBB"
+li1=li[1:]
+print(li1)
+c=0
+def chk(p,q):
+    if p==q:
+        return ""
+    else:
+        return p
+d=list(map(chk,li1,li))
+print(d)
 
 
+from functools import reduce
+li = [5, 8, 10, 20, 50, 100] 
+sum = reduce((lambda x, y: x + y), li) 
+print (sum) 
