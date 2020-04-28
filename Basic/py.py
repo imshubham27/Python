@@ -556,3 +556,40 @@ from functools import reduce
 li = [5, 8, 10, 20, 50, 100] 
 sum = reduce((lambda x, y: x + y), li) 
 print (sum) 
+
+import difflib
+string1 = "a"
+string2 = "abcd"
+matches = difflib.SequenceMatcher(
+    None, string1, string2).get_matching_blocks()
+print(type(matches))
+print(len(matches))
+for match in matches:
+    print(string1[match.a:match.a + match.size])
+
+a=[312321313,4241143,4124143411,24343]
+a=(a[-1::-1])
+a=' '.join(str(x) for x in a)
+print(a)
+
+t=999999997668
+b=1
+d=1.5
+def timer(a):
+    global i
+    global b
+    global d
+    # print("A",a)
+    if((a-1)==0 or (b-1)==0):
+        # d=a
+        # i=i+1
+        d=int(2*d)
+        b=d
+        # print("B",b)
+        return (b)
+    else:
+        # global b
+        b=b-1
+        return (b)
+c=list(map(timer,range(1,t+1)))
+print(c[t-1])
