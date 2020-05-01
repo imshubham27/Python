@@ -572,7 +572,7 @@ a=(a[-1::-1])
 a=' '.join(str(x) for x in a)
 print(a)
 
-t=999999997668
+t=99
 b=1
 d=1.5
 def timer(a):
@@ -593,3 +593,15 @@ def timer(a):
         return (b)
 c=list(map(timer,range(1,t+1)))
 print(c[t-1])
+
+s="shubham"
+print('\n'.join(s))
+
+l=[1,2,3,4,5,6,7,8,9]
+b=next(map(lambda a:1 if a==3 else -1,l))
+print(b)
+
+test=[1,2,3,6,58,78,50,651,36,79,1009]
+print(next( filter(lambda x:1 if x%5==0 else -1,test) ))
+
+next( x for x in test if x%5==0 )
