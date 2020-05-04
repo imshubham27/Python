@@ -605,3 +605,110 @@ test=[1,2,3,6,58,78,50,651,36,79,1009]
 print(next( filter(lambda x:1 if x%5==0 else -1,test) ))
 
 next( x for x in test if x%5==0 )
+
+k=40
+arr=[13, 91 ,5 ,100, 5, 12,5 ,79 ,99, 87, 59, 65 ,62 ,73 ,93 ,73 ,63,65 ,59, 46 ,67, 35 ,22 ,55 ,50, 53, 38 ,79 ,75 ,44, 95 ,53, 5 ,73, 44 ,94 ,95, 21, 60 ,2, 32, 48, 72 ,13 ,91, 74, 79, 99 ,17 ,31 ,53, 20, 88 ,17, 54, 47, 56, 79, 23, 49, 95, 81, 9 ,50, 12, 20, 45, 82, 44, 82, 93 ,15, 73, 51, 65, 96, 4, 77, 37, 41, 30, 11, 65 ,100 ,62, 51, 64 ,48 ,12, 11, 68, 81, 46, 37 ,10 ,46, 75, 82, 21, 23]
+arr.sort()
+
+print(arr)
+print()
+
+def chk1(a):
+    c=list(map(lambda x:1 if (a<x) and (a+x)%k==0 else -1,arr))
+    return c.count(1)
+d=list(map(chk1,arr))
+print(sum(d))
+
+from itertools import permutations 
+perm = list(permutations(arr, 2))
+# print(perm) 
+d=list(map(lambda x: 1 if(x[0]<x[1] and (x[0]+x[1])%k==0) else -1,perm))
+print(d.count(1))
+# return d.count(1)
+# return sum(d)
+
+from functools import reduce
+li = [5, 8, 10, 20, 50, 100] 
+sum = reduce((lambda x, y: x + y), li) 
+print (sum) 
+
+
+
+i=c=0
+a=len(s)%m
+print("A",a)
+s=s[:len(s)-a]
+print("S",s)
+while(i!=len(s)-(m-1)):
+    e=[]
+    e=s[i:i+m]
+    print("I",i)
+    print("E",e)
+    if(sum(e)==d):
+        c=c+1
+    i=i+1
+print(c)
+
+a=input()
+
+a=[1,2,3,4,5]
+a.pop(1)
+print(a)
+
+import string 
+test_list = list(string.ascii_lowercase) 
+print(test_list)
+
+a=1243
+a=list(str(a))
+print(a)
+
+
+n=110110015
+a=list(str(n))
+a=[int(x) for x in a]
+print(a)
+# print(a)
+# c=0
+a=list(filter(lambda a: a != 0, a))
+print(a)
+print(sum(list(map(lambda x:1 if(n%x==0) else 0,a))))
+
+p=[21 ,22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 1 ,2 ,3, 4, 5 ,6 ,7, 8, 9, 10, 11 ,12, 13, 14, 15, 16, 17, 18 ,19, 20]
+d=[p.index(p.index(x)+1)+1 for x in range(1,len(p)+1)]
+d=[str(x) for x in d]
+d="".join(d)
+d=[1,3123,4341,132]
+d=[str(x) for x in d]
+print('\n'.join(d))
+
+a=[0,-1,2,1]
+k=3
+d=list(map(lambda x:1 if(x<=0) else -1,a))
+if(d.count(1)>=k):
+    print("NO")
+else:
+    print("YES")
+
+a=[1,5,3,6,2,5,3]
+a=list( dict.fromkeys(a) )
+print(a)
+
+a="shubhamshubham"
+a=list(a)
+b=list((set(a)))
+# b=''.join(b)
+print(b)
+
+[a.remove(x) for x in b]
+print(a)
+def chk(z):
+    if z in b:
+        return 0
+    else:
+        return 1
+d=list(map(chk,a))
+print(sum(d)+len(b))
+
+
+
