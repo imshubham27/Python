@@ -751,7 +751,43 @@ d=[]
 a=1
 b=2
 d=[1,2]
-perm=list(combinations(d,2))
+perm=list(combinations_with_replacement(d,3))
 print(perm)
 
+from itertools import product
+arrays = [(1),(2)]
+cp = list(product(*arrays))
+print(cp)
+
+
+a=dict()
+print(a)
+a[0]="HI"
+print(a)
+
+data =dict()
+data['a'] = 1 
+print (data)
+
+print("{} and {}".format(1,2))
+
+a=input()
+b=input()
+c=input()
+b=b.split()
+c=c.split()
+b=[int(x) for x in b]
+c=[int(x) for x in c]
+
+def chk(p,q):
+    if(p>q or p==q):
+        return 0
+    else:
+        return 1
+
+z=list(map(b,c))
+if(sum(z)==0):
+    print('Yes')
+else:
+    print('No')git a
 
