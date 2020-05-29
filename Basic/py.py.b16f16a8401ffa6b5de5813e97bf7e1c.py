@@ -792,3 +792,96 @@ else:
     print('No')
 
 
+i=0
+def solve(A):
+    A=sorted(A)
+    def chk(a):
+        global i
+        if (len(A)-i-1)==a:
+            i=i+1
+            return 1
+        else:
+            i=i+1
+            return 0
+    z=list(map(chk,A))
+    # print(sum(z))
+    if(sum(z)==0):
+        return (-1)
+    else:
+        return (1) 
+
+l=[ -1, -2, 0, 0, 0, -3 ]
+a=solve(l)
+print(a)
+
+
+
+i=0
+class Solution:
+    def solve(self,A):
+        A=sorted(A)
+        def chk(a):
+            global i
+            if (len(A)-i-1)==a:
+                i=i+1
+                return 1
+            else:
+                i=i+1
+                return 0
+        z=list(map(chk,A))
+        print(sum(z))
+        if(sum(z)>0):
+            return (1)
+        else:
+            return (-1) 
+
+a=('1','2')
+a=list(a)
+a=[int(x) for x in (a)]
+print(a)
+
+for j in range(5):
+    print(j)
+    j=j+2
+
+import math
+def encryption(s):
+    p=""
+    s=s.strip()
+    a=(int(math.sqrt(len(s))))
+    #To check whether the number is perfect square root or not
+    if int(a + 0.5) ** 2 == len(s):
+        b=a
+    else:
+        b=a+1
+    for i in range(b):
+        j=0
+        k=""
+        while((i+j)<len(s)):
+            print("I+J",i+j)
+            k=k+s[i+j]
+            j=j+a
+        p=p + k + " "
+    return(p.lstrip())
+
+print(encryption("iffactsdontfittotheorychangethefacts"))
+
+i=3
+b=4
+# Complete the strangeCounter function below.
+def strangeCounter(t):
+    def chk(a):
+        global i
+        global b
+        if(b==1):
+            i=i*2
+            b=i
+            return b
+        else:
+            b=b-1
+            return b
+    z=list(map(chk,range(1,t+1)))
+    # print(z)
+    return(z[t-1])
+
+print(strangeCounter(999999997668))
