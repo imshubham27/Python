@@ -792,3 +792,143 @@ else:
     print('No')
 
 
+i=0
+def solve(A):
+    A=sorted(A)
+    def chk(a):
+        global i
+        if (len(A)-i-1)==a:
+            i=i+1
+            return 1
+        else:
+            i=i+1
+            return 0
+    z=list(map(chk,A))
+    # print(sum(z))
+    if(sum(z)==0):
+        return (-1)
+    else:
+        return (1) 
+
+l=[ -1, -2, 0, 0, 0, -3 ]
+a=solve(l)
+print(a)
+
+
+
+i=0
+class Solution:
+    def solve(self,A):
+        A=sorted(A)
+        def chk(a):
+            global i
+            if (len(A)-i-1)==a:
+                i=i+1
+                return 1
+            else:
+                i=i+1
+                return 0
+        z=list(map(chk,A))
+        print(sum(z))
+        if(sum(z)>0):
+            return (1)
+        else:
+            return (-1) 
+
+a=('1','2')
+a=list(a)
+a=[int(x) for x in (a)]
+print(a)
+
+for j in range(5):
+    print(j)
+    j=j+2
+
+import math
+def encryption(s):
+    p=""
+    s=s.strip()
+    a=(int(math.sqrt(len(s))))
+    #To check whether the number is perfect square root or not
+    if int(a + 0.5) ** 2 == len(s):
+        b=a
+    else:
+        b=a+1
+    for i in range(b):
+        j=0
+        k=""
+        while((i+j)<len(s)):
+            print("I+J",i+j)
+            k=k+s[i+j]
+            j=j+a
+        p=p + k + " "
+    return(p.lstrip())
+
+print(encryption("iffactsdontfittotheorychangethefacts"))
+
+i=3
+b=4
+# Complete the strangeCounter function below.
+def strangeCounter(t):
+    def chk(a):
+        global i
+        global b
+        if(b==1):
+            i=i*2
+            b=i
+            return b
+        else:
+            b=b-1
+            return b
+    z=list(map(chk,range(1,t+1)))
+    # print(z)
+    return(z[t-1])
+
+from functools import reduce
+li = [5, 8, 10, 20, 50, 100] 
+xi=[2,1,4,21]
+sum = list(map(lambda x, y: x + y, li,xi) )
+print (sum) 
+
+s=[(1,2),(1,2)]
+print(set(s))
+
+# A Python program to print all  
+# permutations using library function 
+from itertools import combinations
+  
+# Get all permutations of [1, 2, 3] 
+perm = combinations([2, 3],2) 
+  
+# Print the obtained permutations 
+for i in list(perm): 
+    print(i)
+
+from itertools import product
+x=[2,3]
+print([p for p in product(x, repeat=2)])
+
+a='1001'
+
+print(list(int(a))
+
+a=['5','23']
+b='\n'.join(a)
+print(b)
+
+a=[1,2,3]
+a[3] is None
+
+# Python 3
+from functools import reduce
+
+numbers = [1,2]
+xi=[2,3]
+
+def custom_sum(first, second):
+    return first + second
+
+a=1
+b=2
+A=[a,b]
+print(A)
