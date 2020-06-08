@@ -949,14 +949,9 @@ final_dict = dict(zip(ini_list, list(ini_dict.values())))
 # printing final result 
 print ("final dictionary", str(final_dict)) 
 
-import math
-n=2
-a=math.pow(2,1/n)
-print(a)
 
-a=3.2
-print(math.floor(a))
-print(math.ceil(a))
-
-a=range(1,34)
-print(a)
+s="shubham"
+s=list(s)
+s.reverse()
+s=''.join(s)
+print(s)
