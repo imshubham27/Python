@@ -809,4 +809,12 @@ sorted()	Return a new sorted list of keys in the dictionary.
 
 Python has a built-in open() function to open a file. 
 This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
+In mode, we specify whether we want to read r, write w or append a to the file. 
+
+Mode	Description
+r	Opens a file for reading. (default)
+w	Opens a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
+a	Opens a file for appending at the end of the file without truncating it. Creates a new file if it does not exist.
+
+Closing a file will free up the resources that were tied with the file. It is done using the close() method available in Python.
 
