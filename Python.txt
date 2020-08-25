@@ -1,0 +1,812 @@
+Python Keywords:
+Keywords are the reserved words in Python.
+All the keywords except True, False and None are in lowercase and they must be written as they are. 
+
+Python Identifiers:
+An identifier is a name given to entities like class, functions, variables, etc.
+It helps to differentiate one entity from another.
+
+1. Identifiers can be a combination of letters in lowercase (a to z) or uppercase (A to Z) or digits (0 to 9) or an underscore _.
+   Names like myClass, var_1 and print_this_to_screen, all are valid example.
+2. An identifier cannot start with a digit. 1variable is invalid, but variable1 is a valid name.
+3. Keywords cannot be used as identifiers.
+   global = 1
+4. We cannot use special symbols like !, @, #, $, % etc. in our identifier.
+   a@ = 0
+
+Python is a case-sensitive language. This means, Variable and variable are not the same.
+
+Instructions that a Python interpreter can execute are called statements. 
+For example, a = 1 is an assignment statement.
+
+Multi-line statement:
+In Python, the end of a statement is marked by a newline character. 
+But we can make a statement extend over multiple lines with the line continuation character (\). For example:
+
+a = 1 + 2 + 3 + \
+    4 + 5 + 6 + \
+    7 + 8 + 9
+
+We can also put multiple statements in a single line using semicolons, as follows:
+a = 1; b = 2; c = 3
+
+Docstrings in Python:
+A docstring is short for documentation string.
+
+The docstrings are associated with the object as their __doc__ attribute.
+So, we can access the docstrings of the above function with the following lines of code:
+
+def double(num):
+    """Function to double the value"""
+    return 2*num
+print(double.__doc__)
+
+Output
+Function to double the value
+
+Note: Python is a type-inferred language, so you don't have to explicitly define the variable type. 
+It automatically knows that apple.com is a string and declares the website variable as a string.
+
+Declaring and assigning value to a constant
+Create a constant.py:
+PI = 3.14
+GRAVITY = 9.8
+
+Create a main.py:
+import constant
+print(constant.PI)
+print(constant.GRAVITY)
+
+Output
+3.14
+9.8
+
+Literals:
+Literal is a raw data given in a variable or constant. 
+
+Numeric Literals:
+Numeric Literals are immutable (unchangeable). 
+Numeric literals can belong to 3 different numerical types: Integer, Float, and Complex.
+
+String literals:
+A string literal is a sequence of characters surrounded by quotes. 
+We can use both single, double, or triple quotes for a string.
+
+strings = "This is Python"
+char = "C"
+multiline_str = """This is a multiline string with more than one line code."""
+
+In the above program, This is Python is a string literal and C is a character literal.
+The value in triple-quotes """ assigned to the multiline_str is a multi-line string literal.
+
+Boolean literals:
+A Boolean literal can have any of the two values: True or False.
+x = (1 == True)
+y = (1 == False)
+In the above program, we use boolean literal True and False. In Python, True represents the value as 1 and False as 0. 
+The value of x is True because 1 is equal to True. And, the value of y is False because 1 is not equal to False.
+
+Special literals:
+Python contains one special literal i.e. None. We use it to specify that the field has not been created.
+
+Literal Collections:
+There are four different literal collections List literals, Tuple literals, Dict literals, and Set literals.
+
+Python Data Types:
+Python Numbers:
+Integers, floating point numbers and complex numbers fall under Python numbers category. 
+They are defined as int, float and complex classes in Python.
+We can use the type() function to know which class a variable or a value belongs to. 
+Similarly, the isinstance(x,datatype) function is used to check if x belongs to a particular class.It will show True or False
+Integer and floating points are separated by decimal points. 1 is an integer, 1.0 is a floating-point number.
+
+Python List:
+List is an ordered sequence of items. 
+It is one of the most used datatype in Python and is very flexible. All the items in a list do not need to be of the same type.
+Lists are mutable, meaning, the value of elements of a list can be altered.
+
+Python Tuple:
+Tuple is an ordered sequence of items same as a list. 
+The only difference is that tuples are immutable. Tuples once created cannot be modified.
+Tuples are used to write-protect data and are usually faster than lists as they cannot change dynamically.
+
+Python Strings:
+String is sequence of Unicode characters.
+
+Python Set:
+Set is an unordered collection of unique items. 
+Set is defined by values separated by comma inside braces { }. Items in a set are not ordered.
+We can perform set operations like union, intersection on two sets. Sets have unique values. They eliminate duplicates.
+Since, set are unordered collection, indexing has no meaning. Hence, the slicing operator [] does not work.
+
+This means that it is not necessary to get the order in which we insert items.- Unordered
+
+Python Dictionary:
+Dictionary is an unordered collection of key-value pairs.Key and value can be of any type.
+dictionaries are defined within braces {} with each item being a pair in the form key:value
+
+To convert to dictionary, each element must be a pair:
+>>> dict([[1,2],[3,4]])
+{1: 2, 3: 4}
+>>> dict([(3,26),(4,44)])
+{3: 26, 4: 44}
+
+Type Conversion:
+The process of converting the value of one data type (integer, string, float, etc.) to another data type is called type conversion. 
+Python has two types of type conversion.
+Implicit Type Conversion
+Explicit Type Conversion
+
+Implicit Type Conversion:
+In Implicit type conversion, Python automatically converts one data type to another data type.
+
+Example 1: Converting integer to float
+num_int = 123
+num_flo = 1.23
+num_new = num_int + num_flo
+
+Value of num_new: 124.23
+datatype of num_new: <class 'float'>
+
+we can see the num_new has a float data type 
+because Python always converts smaller data types to larger data types to avoid the loss of data.
+
+We add two variables num_int of int type and num_str of string type.
+As we can see from the output, we got TypeError. Python is not able to use Implicit Conversion in such conditions.
+However, Python has a solution for these types of situations which is known as Explicit Conversion.
+
+Explicit Type Conversion:
+In Explicit Type Conversion, users convert the data type of an object to required data type. 
+We use the predefined functions like int(), float(), str(), etc to perform explicit type conversion.
+This type of conversion is also called typecasting because the user casts (changes) the data type of the objects.
+
+In Type Casting, loss of data may occur as we enforce the object to a specific data type.
+
+Python Output Using print() function:
+>>>print(1, 2, 3, 4, sep='*')
+1*2*3*4
+
+>>>print(1, 2, 3, 4, sep='#', end='&')
+1#2#3#4&
+
+Python Input:
+To allow flexibility, we might want to take the input from the user. In Python, we have the input() function to allow this. 
+The syntax for input() is:
+input([prompt])
+where prompt is the string we wish to display on the screen.
+
+eval() function:
+It can evaluate even expressions, provided the input is a string
+>>> eval('2+3')
+5
+
+Python Import:
+A module is a file containing Python definitions and statements. 
+
+Operators are special symbols in Python that carry out arithmetic or logical computation.
+
+Arithmetic operators:
+Arithmetic operators are used to perform mathematical operations like addition, subtraction, multiplication, etc.
+Operator	        Meaning	Example
+    /	        Divide left operand by the right one (always results into float)	x / y
+    %	        Modulus - remainder of the division of left operand by the right	x % y (remainder of x/y)
+    //	        Floor division - division that results into whole number adjusted to the left in the number line	x // y
+    **	        Exponent - left operand raised to the power of right	x**y (x to the power y)
+
+Comparison operators:
+Comparison operators are used to compare values. It returns either True or False according to the condition.
+Operator	                        Meaning	                                                               Example
+    >	    Greater than - True if left operand is greater than the right	                                x > y
+    <	    Less than - True if left operand is less than the right	                                        x < y
+    ==	    Equal to - True if both operands are equal	                                                    x == y
+    !=	    Not equal to - True if operands are not equal	                                                x != y
+    >=	    Greater than or equal to - True if left operand is greater than or equal to the right	        x >= y
+    <=	    Less than or equal to - True if left operand is less than or equal to the right	                x <= y
+
+Logical operators:
+Logical operators are the and, or, not operators.
+
+Bitwise operators:
+Bitwise operators act on operands as if they were strings of binary digits. They operate bit by bit.
+
+Let x = 10 (0000 1010 in binary) and y = 4 (0000 0100 in binary)
+Operator	    Meaning	Example
+    &	    Bitwise AND	x & y = 0 (0000 0000)
+    |	    Bitwise OR	x | y = 14 (0000 1110)
+    ~	    Bitwise NOT	~x = -11 (1111 0101)
+    ^	    Bitwise XOR	x ^ y = 14 (0000 1110)
+    >>	    Bitwise right shift	x >> 2 = 2 (0000 0010)
+    <<	    Bitwise left shift	x << 2 = 40 (0010 1000)
+
+
+Assignment operators:
+Assignment operators are used in Python to assign values to variables.
+a = 5 is a simple assignment operator that assigns the value 5 on the right to the variable a on the left.
+
+There are various compound operators in Python like a += 5 that adds to the variable and later assigns the same. 
+It is equivalent to a = a + 5.
+
+Special operators:
+Python language offers some special types of operators like the identity operator or the membership operator.
+
+Identity operators:
+'is' and 'is not' are the identity operators in Python. 
+They are used to check if two values (or variables) are located on the same part of the memory.
+
+Membership operators:
+'in' and 'not in' are the membership operators in Python. 
+They are used to test whether a value or variable is found in a sequence (string, list, tuple, set and dictionary).
+
+Name (also called identifier) is simply a name given to objects. 
+Everything in Python is an object. 
+Name is a way to access the underlying object.
+
+For example, when we do the assignment a = 2, 2 is an object stored in memory and a is the name we associate it with. 
+We can get the address (in RAM) of some object through the built-in function id().
+
+a = 2
+print('id(2) =', id(2))
+print('id(a) =', id(a))
+
+Output
+id(2) = 9302208
+id(a) = 9302208
+
+a namespace is a collection of names.
+a namespace as a mapping of every name you have defined to corresponding objects.
+This is the reason that built-in functions like id(), print() etc. are always available to us from any part of the program. 
+Each module creates its own global namespace.
+These different namespaces are isolated. Hence, the same name that may exist in different modules do not collide.
+
+Python Variable Scope:
+Although there are various unique namespaces defined, we may not be able to access all of them from every part of the program.
+
+A scope is the portion of a program from where a namespace can be accessed directly without any prefix.
+At any given moment, there are at least three nested scopes.
+Scope of the current function which has local names
+Scope of the module which has global names
+Outermost scope which has built-in names
+
+Example of Scope and Namespace in Python
+def outer_function():
+    b = 20
+    def inner_func():
+        c = 30
+
+a = 10
+
+Here, the variable a is in the global namespace. 
+Variable b is in the local namespace of outer_function() and c is in the nested local namespace of inner_function().
+When we are in inner_function(), c is local to us, b is nonlocal and a is global. 
+We can read as well as assign new values to c but can only read b and a from inner_function().
+If we try to assign as a value to b, a new variable b is created in the local namespace which is different than the nonlocal b. 
+The same thing happens when we assign a value to a.
+
+The elif is short for else if. It allows us to check for multiple expressions.
+
+range(start, stop,step_size):
+The range object is "lazy" in a sense because it doesn't generate every number that it "contains" when we create it. 
+digits = [0, 1, 5]
+
+for i in digits:
+    print(i)
+else:
+    print("No items left.")
+
+When you run the program, the output will be:
+0
+1
+5
+No items left.
+
+counter = 0
+while counter < 3:
+    print("Inside loop")
+    counter = counter + 1
+else:
+    print("Inside else")
+
+Output:
+Inside loop
+Inside loop
+Inside loop
+Inside else
+
+If the break statement is inside a nested loop (loop inside another loop), 
+the break statement will terminate the innermost loop.
+
+The continue statement is used to skip the rest of the code inside a loop for the current iteration only. 
+Loop does not terminate but continues on with the next iteration.
+
+the pass statement is a null statement. The difference between a comment and a pass statement in Python is that while the interpreter ignores a comment entirely, pass is not ignored.
+
+Types of Functions:
+Built-in functions - Functions that are built into Python.
+User-defined functions - Functions defined by the users themselves.
+
+Python Default Arguments
+Function arguments can have default values in Python.
+
+Any number of arguments in a function can have a default value. 
+But once we have a default argument, all the arguments to its right must also have default values.
+
+def greet(msg = "Good morning!", name):
+We would get an error as:
+SyntaxError: non-default argument follows default argument
+
+Sometimes, we do not know in advance the number of arguments that will be passed into a function
+
+def greet(*names):
+    """This function greets all
+    the person in the names tuple."""
+
+    # names is a tuple with arguments
+    for name in names:
+        print("Hello", name)
+greet("Monica", "Luke", "Steve", "John")
+
+Output
+Hello Monica
+Hello Luke
+Hello Steve
+Hello John
+
+In Python, an anonymous function is a function that is defined without a name.
+While normal functions are defined using the def keyword in Python, anonymous functions are defined using the lambda keyword.
+Hence, anonymous functions are also called lambda functions.
+
+double = lambda x: x * 2
+print(double(5))
+
+Output
+10
+
+The filter() function in Python takes in a function and a list as arguments.
+The function is called with all the items in the list and a new list is returned which contains items for which the function evaluates to True.
+
+my_list = [1, 5, 4, 6, 8, 11, 3, 12]
+new_list = list(filter(lambda x: (x>8 == 0) , my_list))
+print(new_list)
+
+Output
+[11,12]
+
+The map() function in Python takes in a function and a list.
+The function is called with all the items in the list and a new list is returned which contains items returned by that function for each item.
+
+my_list = [1, 5, 4, 6, 8, 11, 3, 12]
+new_list = list(map(lambda x: x * 2 , my_list))
+print(new_list)
+
+Output
+[2, 10, 8, 12, 16, 22, 6, 24]
+
+Nonlocal Variables:
+Nonlocal variables are used in nested functions whose local scope is not defined
+
+def outer():
+    x = "local"
+    def inner():
+        nonlocal x
+        x = "nonlocal"
+        print("inner:", x)
+
+    inner()
+    print("outer:", x)
+outer()
+
+Output
+inner: nonlocal
+outer: nonlocal
+
+The inner() function is defined in the scope of another function outer().
+
+c = 1 # global variable
+def add():
+    print(c)
+add()
+
+When we run the above program, the output will be:
+1
+
+c = 1 # global variable  
+def add():
+    c = c + 2 # increment c by 2
+    print(c)
+add()
+
+When we run the above program, the output shows an error:
+UnboundLocalError: local variable 'c' referenced before assignment
+
+This is because we can only access the global variable but cannot modify it from inside the function.
+The solution for this is to use the global keyword.
+
+Modules refer to a file containing Python statements and definitions.
+A file containing Python code, for example: example.py, is called a module, and its module name would be example.
+
+Let us create a module. Type the following and save it as example.py.
+# Python Module example
+c=11
+def add(a, b):
+   """This program adds two
+   numbers and return the result"""
+   result = a + b
+   return result
+
+>>> import example
+>>> example.add(4,5.5)
+>>> print(example.c)
+9.5
+11
+
+Now if our module changed during the course of the program, we would have to reload it.One way to do this is to restart the interpreter.
+But this does not help much.
+Python provides a more efficient way of doing this. 
+We can use the reload() function inside the imp module to reload a module.
+
+We can use the dir() function to find out names that are defined inside a module.
+For example, we have defined a function add() in the module example that we had in the beginning.
+
+As our application program grows larger in size with a lot of modules, 
+we place similar modules in one package and different modules in different packages.
+
+Similarly, as a directory can contain subdirectories and files, a Python package can have sub-packages and modules.
+A directory must contain a file named __init__.py in order for Python to consider it as a package. 
+This file can be left empty but we generally place the initialization code for that package in this file.
+
+While integers can be of any length, a floating-point number is accurate only up to 15 decimal places
+
+Number System	        Prefix
+    Binary	        '0b' or '0B'
+    Octal	        '0o' or '0O'
+    Hexadecimal	    '0x' or '0X'
+
+>>> (1.1 + 2.2) == 3.3
+False
+It turns out that floating-point numbers are implemented in computer hardware as binary fractions as the computer only understands binary (0 and 1). 
+Due to this reason, most of the decimal fractions we know, cannot be accurately stored in our computer.
+To overcome this issue, we can use the decimal module that comes with Python
+
+We might ask, why not implement Decimal every time, instead of float? The main reason is efficiency. 
+Floating point operations are carried out must faster than Decimal operations.
+
+Python provides operations involving fractional numbers through its fractions module.
+import fractions
+print(fractions.Fraction(1.5))
+print(fractions.Fraction(5))
+print(fractions.Fraction(1,3))
+
+Output
+3/2
+5
+1/3
+
+Fortunately, Fraction allows us to instantiate with string as well. This is the preferred option when using decimal numbers.
+import fractions
+# As float
+# Output: 2476979795053773/2251799813685248
+print(fractions.Fraction(1.1))
+# As string
+# Output: 11/10
+print(fractions.Fraction('1.1'))
+
+Output
+2476979795053773/2251799813685248
+11/10
+
+
+import random
+print(random.randrange(10, 20))
+x = ['a', 'b', 'c', 'd', 'e']
+# Get random choice
+print(random.choice(x))
+# Shuffle x
+random.shuffle(x)
+# Print the shuffled x
+print(x)
+# Print random element
+print(random.random())
+
+When we run the above program we get the output as follows.(Values may be different due to the random behavior)
+18
+e
+['c', 'e', 'd', 'b', 'a']
+0.5682821194654443
+
+# Appending and Extending lists in Python
+odd = [1, 3, 5]
+odd.append(7)
+print(odd)
+odd.extend([9, 11, 13])
+print(odd)
+
+Output
+[1, 3, 5, 7]
+[1, 3, 5, 7, 9, 11, 13]
+
+We can also use + operator to combine two lists. This is also called concatenation.
+The * operator repeats a list for the given number of times.
+# Concatenating and repeating lists
+odd = [1, 3, 5]
+print(odd + [9, 7, 5])
+print(["re"] * 3)
+
+Output
+[1, 3, 5, 9, 7, 5]
+['re', 're', 're']
+
+odd = [1, 9]
+odd.insert(1,3) #insert(position,number)
+print(odd)
+odd[2:2] = [5, 7] #insert multiple items by squeezing it into an empty slice of a list.
+print(odd)
+
+Output
+[1, 3, 9]
+[1, 3, 5, 7, 9]
+
+We can delete one or more items from a list using the keyword del
+
+# Deleting list items
+my_list = ['p', 'r', 'o', 'b', 'l', 'e', 'm']
+# delete one item
+del my_list[2]
+print(my_list)
+# delete multiple items
+del my_list[1:5]
+print(my_list)
+# delete entire list
+del my_list
+# Error: List not defined
+print(my_list)
+
+Output
+['p', 'r', 'b', 'l', 'e', 'm']
+['p', 'm']
+Traceback (most recent call last):
+  File "<string>", line 18, in <module>
+NameError: name 'my_list' is not defined
+
+We can also use the clear() method to empty a list.
+>>>my_list.clear()
+Output: []
+
+Python List Methods
+append() - Add an element to the end of the list
+extend() - Add all elements of a list to the another list
+insert() - Insert an item at the defined index
+remove() - Removes an item from the list
+pop() - Removes and returns an element at the given index
+clear() - Removes all items from the list
+index() - Returns the index of the first matched item
+count() - Returns the count of the number of items passed as an argument
+sort() - Sort items in a list in ascending order
+reverse() - Reverse the order of items in the list
+copy() - Returns a shallow copy of the list
+
+This means that elements of a tuple cannot be changed once they have been assigned. 
+But, if the element is itself a mutable data type like list, its nested items can be changed.
+
+my_tuple = (4, 2, 3, [6, 5])
+# TypeError: 'tuple' object does not support item assignment
+# my_tuple[1] = 9
+# However, item of mutable element can be changed
+my_tuple[3][0] = 9    # Output: (4, 2, 3, [9, 5])
+print(my_tuple)
+
+Output
+(4, 2, 3, [9, 5])
+
+Deleting a tuple entirely, however, is possible using the keyword del.
+
+We generally use tuples for heterogeneous (different) data types and lists for homogeneous (similar) data types.
+Since tuples are immutable, iterating through a tuple is faster than with list. So there is a slight performance boost.
+Tuples that contain immutable elements can be used as a key for a dictionary. With lists, this is not possible.
+
+Strings are immutable. This means that elements of a string cannot be changed once they have been assigned.
+We cannot delete or remove characters from a string. 
+But deleting the string entirely is possible using the del keyword.
+
+str = 'cold'
+# enumerate()
+list_enumerate = list(enumerate(str))
+Output
+list(enumerate(str) =  [(0, 'c'), (1, 'o'), (2, 'l'), (3, 'd')]
+
+If we want to print a text like He said, "What's there?", we can neither use single quotes nor double quotes. 
+ Alternatively, we can use escape sequences.
+
+Some of the commonly used methods are lower(), upper(), join(), split(), find(), replace()
+>>> "PrOgRaMiZ".lower()
+'programiz'
+>>> "PrOgRaMiZ".upper()
+'PROGRAMIZ'
+>>> "This will split all words into a list".split()
+['This', 'will', 'split', 'all', 'words', 'into', 'a', 'list']
+>>> ' '.join(['This', 'will', 'join', 'all', 'words', 'into', 'a', 'string'])
+'This will join all words into a string'
+>>> 'Happy New Year'.find('ew')
+7
+>>> 'Happy New Year'.replace('Happy','Brilliant')
+'Brilliant New Year'
+
+A set is an unordered collection of items. Every set element is unique (no duplicates) and must be immutable (cannot be changed).
+However, a set itself is mutable. We can add or remove items from it.
+
+A set is created by placing all the items (elements) inside using the built-in set() function or by {}.
+a = {}
+print(type(a))
+a = set()
+print(type(a))
+
+Output
+<class 'dict'>
+<class 'set'>
+
+# initialize my_set
+my_set = {1, 3}
+print(my_set)
+# my_set[0]
+# if you uncomment above line,
+# you will get an error
+# TypeError: 'set' object does not support indexing
+
+# add an element
+my_set.add(2)
+print(my_set)
+# Output: {1, 2, 3}
+
+# add multiple elements
+my_set.update([2, 3, 4])
+print(my_set)
+# Output: {1, 2, 3, 4}
+
+# add list and set
+my_set.update([4, 5], {1, 6, 8})
+print(my_set)
+# Output: {1, 2, 3, 4, 5, 6, 8}
+
+A particular item can be removed from a set using the methods discard() and remove().
+The only difference between the two is that the discard() function leaves a set unchanged if the element is not present in the set. 
+On the other hand, the remove() function will raise an error in such a condition (if element is not present in the set).
+Similarly, we can remove and return an item using the pop() method.
+Since set is an unordered data type, there is no way of determining which item will be popped. It is completely arbitrary.
+We can also remove all the items from a set using the clear() method.
+
+Union is performed using | operator. Same can be accomplished using the union() method.
+# Set union method
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+print(A | B) or print(A.union(B)) or print(B.union(A))
+# Output: {1, 2, 3, 4, 5, 6, 7, 8}
+
+Intersection is performed using & operator.Same can be accomplished using the intersection() method.
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+print(A & B) or print(A.intersection(B)) or print(B.intersection(A))
+# Output: {4, 5}
+
+Difference of the set B from set A(A - B) is a set of elements that are only in A but not in B. 
+Similarly, B - A is a set of elements in B but not in A.
+Difference is performed using - operator. Same can be accomplished using the difference() method.
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+print(A - B)
+print(A.difference(B))
+# Output: {1, 2, 3}
+>>> B - A
+>>> B.difference(A)
+{8, 6, 7}
+
+Symmetric Difference of A and B is a set of elements in A and B but not in both (excluding the intersection).
+Symmetric difference is performed using ^ operator. Same can be accomplished using the method symmetric_difference().
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+print(A ^ B)
+# Output: {1, 2, 3, 6, 7, 8}
+>>> A.symmetric_difference(B)
+{1, 2, 3, 6, 7, 8}
+>>> B.symmetric_difference(A)
+{1, 2, 3, 6, 7, 8}
+
+Method	                                            Description
+add()	                                        Adds an element to the set
+clear()             	                        Removes all elements from the set
+copy()	                                        Returns a copy of the set
+difference()	                                Returns the difference of two or more sets as a new set
+difference_update()	                            Removes all elements of another set from this set
+discard()	                                    Removes an element from the set if it is a member. (Do nothing if the element is not in set)
+intersection()	                                Returns the intersection of two sets as a new set
+intersection_update()	                        Updates the set with the intersection of itself and another
+isdisjoint()	                                Returns True if two sets have a null intersection
+issubset()	                                    Returns True if another set contains this set
+issuperset()	                                Returns True if this set contains another set
+pop()	                                        Removes and returns an arbitrary set element. Raises KeyError if the set is empty
+remove()	                                    Removes an element from the set. If the element is not a member, raises a KeyError
+symmetric_difference()	                        Returns the symmetric difference of two sets as a new set
+symmetric_difference_update()	                Updates a set with the symmetric difference of itself and another
+union()	                                        Returns the union of sets in a new set
+update()	                                    Updates the set with the union of itself and others
+
+Function	Description
+all()	Returns True if all elements of the set are true (or if the set is empty).
+any()	Returns True if any element of the set is true. If the set is empty, returns False.
+enumerate()	Returns an enumerate object. It contains the index and value for all the items of the set as a pair.
+len()	Returns the length (the number of items) in the set.
+max()	Returns the largest item in the set.
+min()	Returns the smallest item in the set.
+sorted()	Returns a new sorted list from elements in the set(does not sort the set itself).
+sum()	Returns the sum of all elements in the set.
+isdisjoint()-if A and B don't have in common, 
+issubset(), 
+issuperset()-opposite of subset
+
+Frozenset is a new class that has the characteristics of a set, but its elements cannot be changed once assigned. 
+While tuples are immutable lists, frozensets are immutable sets.
+
+Frozensets can be created using the frozenset() function.
+Being immutable, it does not have methods that add or remove elements.
+A = frozenset([1, 2, 3, 4])
+B = frozenset([3, 4, 5, 6])
+
+Python dictionary is an unordered collection of items. Each item of a dictionary has a key/value pair.
+If we use the square brackets [], KeyError is raised in case a key is not found in the dictionary. 
+On the other hand, the get() method returns None if the key is not found.
+my_dict = {'name': 'Jack', 'age': 26}
+print(my_dict['name'])
+# Output: Jack
+
+print(my_dict.get('age'))
+# Output: 26
+
+print(my_dict.get('address'))
+# Output None
+
+print(my_dict['address'])
+# KeyError
+
+The popitem() method can be used to remove and return an (key, value) item pair from the dictionary.
+All the items can be removed at once, using the clear() method.
+squares = {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+# remove a particular item, returns its value
+print(squares.pop(4))
+# Output: 16
+
+print(squares)
+# Output: {1: 1, 2: 4, 3: 9, 5: 25}
+
+print(squares.popitem())
+# Output: (5, 25)
+
+print(squares)
+# Output: {1: 1, 2: 4, 3: 9}
+
+squares.clear()
+# remove all items
+
+print(squares)
+# Output: {}
+
+del squares
+
+print(squares)
+# Throws Error
+
+
+Method	Description
+clear()	Removes all items from the dictionary.
+copy()	Returns a shallow copy of the dictionary.
+fromkeys(seq[, v])	Returns a new dictionary with keys from seq and value equal to v (defaults to None).
+get(key[,d])	Returns the value of the key. If the key does not exist, returns d (defaults to None).
+items()	Return a new object of the dictionary's items in (key, value) format.
+keys()	Returns a new object of the dictionary's keys.
+pop(key[,d])	Removes the item with the key and returns its value or d if key is not found. If d is not provided and the key is not found, it raises KeyError.
+popitem()	Removes and returns an arbitrary item (key, value). Raises KeyError if the dictionary is empty.
+setdefault(key[,d])	Returns the corresponding value if the key is in the dictionary. If not, inserts the key with a value of d and returns d (defaults to None).
+update([other])	Updates the dictionary with the key/value pairs from other, overwriting existing keys.
+values()	Returns a new object of the dictionary's values
+sorted()	Return a new sorted list of keys in the dictionary.
+
+Python has a built-in open() function to open a file. 
+This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
+
