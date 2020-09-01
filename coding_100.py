@@ -129,3 +129,55 @@ if __name__ == "__main__":
         print("Rectangles Overlap")
     else:
         print("Rectangles Don't Overlap")
+
+
+# How do you find the missing number in a given integer array of 1 to 100?
+# //	Floor division - division that results into whole number adjusted to the left in the number line
+def getMissingNo(A):
+    n = len(A)
+    total = (n + 1)*(n + 2)/2
+    sum_of_A = sum(A)
+    return total - sum_of_A
+
+
+# Driver program to test the above function
+A = [1, 2, 4, 5, 6]
+miss = getMissingNo(A)
+print(miss)
+
+
+# How do you find the duplicate number on a given integer array?
+# How do you find duplicate numbers in an array if it contains multiple duplicates?
+# Function to print duplicates
+array = [0, 4, 3, 2, 7, 8, 2, 3, 1]
+arr_size = len(array)
+for i in range(arr_size):
+
+    array[array[i] % arr_size] = array[array[i] % arr_size] + arr_size
+
+print("The repeating elements are : ")
+for i in range(arr_size):
+    if (array[i] >= arr_size*2):
+        print(i, " ")
+# Time Complexity: O(n), only one traversal is needed, so time complexity is O(n)
+# Auxiliary Space: O(1), no extra space is required, so space complexity is constant.
+
+# How do you find the largest and smallest number in an unsorted integer array?
+
+
+def large_small(arr):
+    max = 0
+    min = float('inf')
+    for i in arr:
+        if i > max:
+            max = i
+        if i < min:
+            min = i
+    print("MIN:", min)
+    print("MAX", max)
+
+
+large_small([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+# How do you reverse a linked list in place?
+
