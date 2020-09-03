@@ -228,13 +228,13 @@ permute(a, 0, n-1)
 # Time Complexity: O(n*n!) Note that there are n! permutations and it requires O(n) time to print a a permutation.
 
 # How do you check if a given string is a palindrome?
-a = 'abccdba'
+a = 'abcba'
 
 
 def check_pali(a):
-    j = -1
+    j = len(a)-1
     i = 0
-    while i < len(a)//2:
+    while j>i:
         if a[i] != a[j]:
             return ('NO')
         i += 1
