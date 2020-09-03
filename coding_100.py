@@ -330,7 +330,7 @@ for i in range(len(s)):
         print(s[i:j])
 
 # T(n)=O(N^2)
-
+ 
 # Find second largest number in an array
 a = [1, 2, 3, 4, 5, 6, 7]
 f = s = 0
