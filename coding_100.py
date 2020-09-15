@@ -55,7 +55,7 @@ print(atoi('-1234'))
 
 # How do you remove duplicates from an array in place?
 # How are duplicates removed from an array without using any library?
-a = [1, 2, 3, 4, 5, 6, 1, 2, 3]
+a = [1, 2, 3, 4, 5, 6, 1, 2, 3, 6]
 b = len(a)
 a.sort()
 i = 0
@@ -173,7 +173,7 @@ large_small([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 # How do you find all pairs of an integer array whose sum is equal to a given number?
 arr = [1, 5, 7, -1, 5]
-b = {i: 0 for i in set(arr)}
+b = {i: 0 for i in (arr)}
 s = 6
 for i in arr:
     if b.get(s-i) != None:
@@ -217,6 +217,7 @@ def permute(a, l, r):
             a[l], a[i] = a[i], a[l]
             permute(a, l+1, r)
             a[l], a[i] = a[i], a[l]  # backtrack
+# Time Complexity: O(n*n!) Note that there are n! permutations and it requires O(n) time to print a a permutation.
 
 
 # Driver program to test the above function
@@ -234,7 +235,7 @@ a = 'abcba'
 def check_pali(a):
     j = len(a)-1
     i = 0
-    while j>i:
+    while j > i:
         if a[i] != a[j]:
             return ('NO')
         i += 1
@@ -243,6 +244,8 @@ def check_pali(a):
 
 
 print(check_pali(a))
+# Length of the longest substring without repeating characters
+# find the all the substrings and check individually
 
 # How do you reverse words in a given sentence without using any library method?
 a = 'shubham sharma is a good boy'
@@ -308,7 +311,7 @@ def isPrime(n):
         return False
 
     # Check from 2 to n-1
-    for i in range(2, n):
+    for i in range(2, int(n//2)):
         if (n % i == 0):
             return False
 
@@ -330,7 +333,7 @@ for i in range(len(s)):
         print(s[i:j])
 
 # T(n)=O(N^2)
- 
+
 # Find second largest number in an array
 a = [1, 2, 3, 4, 5, 6, 7]
 f = s = 0
@@ -500,6 +503,8 @@ def printLeaders(arr, size):
         if max_from_right <= arr[i]:
             print(arr[i])
             max_from_right = arr[i]
+        else:
+            print(max_from_right)
 
 
 # Driver function
@@ -592,9 +597,12 @@ print("LCM of ", a, " and ",
       b, " is ",
       findLCM(a, b), sep="")
 
+
 def fac(n):
-    if n==1:
+    if n == 1:
         return 1
     else:
         return n*fac(n-1)
+
+
 print(fac(4))
