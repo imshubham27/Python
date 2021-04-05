@@ -8,12 +8,12 @@ print(c)
 
 soup = BeautifulSoup(base_url.text,'html.parser')
 
-all1=soup.find_all("div",{"class":"list_item odd"})
+all1=soup.find_all("div",{"class":"list detail"})
 print(all1)
-print(len(all1))
-all2=soup.find_all("div",{"class":"list_item even"})
-print(all2)
-print(len(all2))
+# print(len(all1))
+# all2=soup.find_all("div",{"class":"list_item even"})
+# print(all2)
+# print(len(all2))
 
 
 l=[]
@@ -46,10 +46,10 @@ for item in all1:
         d["Running Time"]="Not mentioned"
     print(" ")
     l.append(d)
-    
+print("L",l)
 for i in range(dt.now().month+1,13,1):
-    print("https://www.imdb.com/movies-coming-soon/2019-"+f"{i:02d}"+"/?ref_=cs_dt_nx")
-    web_url = requests.get("https://www.imdb.com/movies-coming-soon/2019-"+f"{i:02d}"+"/?ref_=cs_dt_nx").text
+    print("https://www.imdb.com/movies-coming-soon/2021-"+f"{i:02d}"+"/?ref_=cs_dt_nx")
+    web_url = requests.get("https://www.imdb.com/movies-coming-soon/2021-"+f"{i:02d}"+"/?ref_=cs_dt_nx").text
     soup = BeautifulSoup(web_url,'html.parser')
     all1=soup.find_all("div",{"class":"list_item odd"})
     all2=soup.find_all("div",{"class":"list_item even"})
@@ -83,5 +83,4 @@ for i in range(dt.now().month+1,13,1):
         l.append(d)
     
 df=pd.DataFrame(l)
-print(df)
 df.to_csv("Output.csv")
